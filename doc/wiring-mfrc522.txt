@@ -13,3 +13,18 @@ r=d("mfrc522","r",d0)
 
 Write data to a mifare classic card:
 r.write("mydata to write to reader")
+
+nodered code for toggle function:
+if(msg.payload === "on")
+{
+    if(context.togglestate === "on")
+    {
+    context.togglestate = "off";
+    }
+    else{
+        context.togglestate ="on";
+    }
+}
+msg.payload = context.togglestate;
+
+return msg;
